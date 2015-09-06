@@ -1,0 +1,28 @@
+;; -*- Hen -*-
+
+((egg "agrep.egg") ; This should never change
+
+ ; List here all the files that should be bundled as part of your egg.  
+
+ (files "agrep.setup" "agrep.scm" "skeleton.h" "engine.scm" "agrep.meta" "tests")
+
+ ; Your egg's license:
+
+ (license "GPL-3")
+
+ ; Pick one from the list of categories (see below) for your egg and
+ ; enter it here.
+
+ (category data)
+
+ ; A list of eggs agrep depends on.
+
+ (needs datatype)
+
+ (test-depends test)
+
+ (author "Ivan Raikov")
+
+ (synopsis "Approximate grep."))
+
+
