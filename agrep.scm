@@ -3,7 +3,7 @@
 ;; Xavier Leroy.
 ;;
 ;;
-;; Copyright 2009-2015 Ivan Raikov.
+;; Copyright 2009-2019 Ivan Raikov.
 ;;
 ;; This program is free software: you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -25,19 +25,17 @@
 	(string-match
 	 substring-match
 	 errors-substring-match
-	 pattern
+	 make-pattern
 	 string->pattern
 	 iso8859_15_case_insensitive
 	 iso8859_15_accent_insensitive	 
 	 iso8859_15_case_and_accent_insensitive	 
 	 )
 
-	(import scheme chicken)
-	(require-extension datatype )
-	(require-library srfi-1 srfi-4 srfi-13 srfi-14)
+        (import scheme (chicken base) (chicken foreign) (chicken blob) (chicken fixnum))
+	(import datatype)
 	(import (only srfi-1 every fold)
 		(only srfi-4 make-u32vector u32vector? )
-		(only srfi-13 string-length)
 		srfi-14)
 
 (include "engine.scm")
@@ -256,7 +254,7 @@
        p)))
 
 
-(define (pattern s #!key (transl #f))
+(define (make-pattern s #!key (transl #f))
   (if (not (string? s)) (error 'pattern "argument is not a string" s))
   (compile-pattern (parse-pattern (string->list s)) transl: transl))
 

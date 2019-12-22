@@ -1,4 +1,4 @@
-(use agrep test)
+(import agrep test)
 
 (define pat (string->pattern "text"))
 

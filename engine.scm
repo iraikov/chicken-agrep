@@ -19,7 +19,6 @@
 ;; <http://www.gnu.org/licenses/>.
 ;;
 
-(import scheme chicken foreign srfi-4)
 
 ;; Error handling, initialization and finalization
 
