@@ -1,0 +1,10 @@
+;;;; -*- Scheme -*-
+
+((synopsis "Approximate grep..")
+ (license "GPL-3")
+ (category data)
+ (test-dependencies test srfi-1)
+ (dependencies datatype srfi-1 srfi-14)
+ (author "Ivan Raikov")
+ (components (extension agrep))
+ )
